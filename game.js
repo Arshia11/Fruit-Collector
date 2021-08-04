@@ -45,10 +45,9 @@ class Game{
                  var y=200;
                  var index =0;
                  drawSprites();
-                 var displayPosition=50;
                  for(var plr in allPlayers){
                     
-                    displayPosition +=50;
+                    
                      index = index+1;
                      x = 500-allPlayers[plr].distance;
                      y=500;
@@ -57,9 +56,6 @@ class Game{
                      players[index - 1].y = y;
                        
                      if(index === player.index){
-                        fill("black");
-                        textSize(25);
-                        text(allPlayers[plr].name ,x-25,y+25);
                          
                        //add code to display the player's name on the respective basket.
 
@@ -104,10 +100,8 @@ class Game{
                  
                   if (player.index !== null) {
                     for (var i = 0; i < fruitGroup.length; i++) {
-                        if (fruitGroup.get(i).isTouching(players[player.index-1])) {
+                        if (fruitGroup.get(i).isTouching(players)) {
                             fruitGroup.get(i).destroy();
-                            player.score=player.score+1;
-                            player.update();
                          
                             
                         }
